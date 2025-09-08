@@ -1,0 +1,250 @@
+@import "./variable.scss";
+html,
+body {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  background: #fff;
+}
+*{
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Montserrat";
+  // src: url("../fonts/Montserrat-Regular.eot");
+  src: 
+    // url("../fonts/Montserrat-Regular.woff") format("woff"),
+    url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  // src: url("../fonts/Montserrat-Medium.eot");
+  src: 
+    // url("../fonts/Montserrat-Medium.woff") format("woff"),
+    url("../fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  // src: url("../fonts/Montserrat-Bold.eot");
+  src: 
+    // url("../fonts/Montserrat-Bold.woff") format("woff"),
+    url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Tajawal';
+  src: url('../fonts/Tajawal-Black.eot');
+  src: url('../fonts/Tajawal-Black.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Tajawal-Black.woff') format('woff'),
+      url('../fonts/Tajawal-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('../fonts/Tajawal-Bold.eot');
+  src: url('../fonts/Tajawal-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Tajawal-Bold.woff') format('woff'),
+      url('../fonts/Tajawal-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('../fonts/Tajawal-ExtraBold.eot');
+  src: url('../fonts/Tajawal-ExtraBold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Tajawal-ExtraBold.woff') format('woff'),
+      url('../fonts/Tajawal-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('../fonts/Tajawal-ExtraLight.eot');
+  src: url('../fonts/Tajawal-ExtraLight.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Tajawal-ExtraLight.woff') format('woff'),
+      url('../fonts/Tajawal-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('../fonts/Tajawal-Light.eot');
+  src: url('../fonts/Tajawal-Light.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Tajawal-Light.woff') format('woff'),
+      url('../fonts/Tajawal-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('../fonts/Tajawal-Medium.eot');
+  src: url('../fonts/Tajawal-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Tajawal-Medium.woff') format('woff'),
+      url('../fonts/Tajawal-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('../fonts/Tajawal-Regular.eot');
+  src: url('../fonts/Tajawal-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Tajawal-Regular.woff') format('woff'),
+      url('../fonts/Tajawal-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+.section-title {
+  color: #000;
+  font-size: 40px;
+    font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  position: relative;
+  max-width: 1280px;
+  margin: 75px auto;
+  width: 100%;
+  span{
+    z-index: 2;
+    position: absolute;
+    top: -45px;
+    left: 25px;
+    text-transform: uppercase;
+  }
+  &::before, &::after {
+    content: "";
+    // width: 20px;
+    height: 2px;
+    background: #E0E0E0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 3px;
+    
+    @media screen and (max-width:560px) {
+      bottom: -5px;
+    }
+  }
+  &::before{
+    width: 105px;
+    // background: #ccc;
+    height: 16px;
+    z-index: 1;
+    border-radius: 0;
+  }
+  &::after{
+  }
+}
+.oriental-rtl{
+  .section-title {
+    span{
+      left: auto;
+      right: 25px;
+    }
+  }
+}
+.section-description {
+  color: $primaryTxtColor;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.69;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14);
+  background-color: #ffffff;
+  transition: 0.4s ease-out;
+  &:hover {
+    // box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.8);
+    transform: translateY(10px);
+  }
+  .card-header {
+    .title {
+      font-size: 23px;
+      font-weight: bold;
+      line-height: 1.26;
+      color: #30353d;
+    }
+  }
+  .card-body {
+    .image-sec {
+      display: flex;
+      height: 150px;
+      img {
+        width: 150px;
+      }
+    }
+  }
+  .card-footer {
+    .description {
+      font-size: 16px;
+      line-height: 1.69;
+      color: $primaryTxtColor;
+    }
+  }
+}
+@media screen and (max-width:560px) {
+  .section-title {
+    font-size: 30px;
+    padding: 0 15px;
+    margin: 50px 0;
+    margin-bottom: 25px;
+  }
+  .section-description {
+    width: 100% !important;
+    text-align: left;
+  }
+  .MuiDrawer-modal {
+    z-index: 9999 !important;
+  }
+}
+
+.oriental-rtl {
+  direction: rtl;
+  font-family: 'Tajawal';
+}

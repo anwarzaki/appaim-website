@@ -1,0 +1,42 @@
+@import '../../../assets/styles/variable.scss';
+.Card {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14);
+    background-color: #ffffff;
+    transition: 0.4s ease-out;
+    &:hover {
+      // box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.8);
+      transform: translateY(10px);
+    }
+  }
+  &__title-sec {
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1.26;
+    color: #3594c4;
+  }
+  &__image-sec {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    img {
+      width: 150px;
+      max-height: 125px;
+    }
+  }
+  &__desc-sec {
+    // text-align: center;
+    font-size: 16px;
+    line-height: 1.69;
+    color: $primaryTxtColor;
+  }
+  @media screen and (max-width:560px){
+      
+  }
+}

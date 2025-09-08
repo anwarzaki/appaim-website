@@ -1,0 +1,192 @@
+@import "../../assets/styles/variable.scss";
+.Contact {
+  &__main-container {
+  }
+  &__inner-container {
+    background: #ccc;
+    height: 530px;
+    position: relative;
+  }
+  &__section-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0;
+    padding-top: 40px;
+  }
+  &__sub-sec {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    max-width: 525px;
+    // max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+  &__map-section {
+    position: relative;
+    height: 530px;
+    .gm-style-iw{
+      max-width: 290px !important;
+    }
+  }
+  &__form-section {
+    position: absolute;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__section-title {
+    &::before,
+    &::after {
+      background: #f9cafa;
+    }
+  }
+  &__form-header {
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  &__form-inner-sec {
+    height: 440px;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15),
+      0px 4px 6px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    width: 550px;
+    background: #fff;
+    border-radius: 6px;
+  }
+  &__form-group-row {
+    margin-bottom: 24px;
+    .custom-dropdown {
+     .MuiInput-formControl {
+        margin-top: 4px;
+      }
+    }
+    .MuiFilledInput-root {
+      background-color: #fff;
+    }
+    .custom-dropdown {
+      .validation-error {
+        bottom: -15px;
+      }
+    }
+    .form-group-col {
+      .MuiFormControl-root {
+        width: 100%;
+      }
+      textarea {
+        width: 100%;
+        padding: 14px;
+      }
+    }
+    &.custom-form-group-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      grid-gap: 15px;
+      align-items: center;
+    }
+  }
+  &__form-social-icon-list {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 150px;
+      align-items: center;
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        cursor: pointer;
+        img {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+  &__form-footer-sec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  &__form-footer-right-sec {
+    display: flex;
+    justify-content: flex-end;
+    button {
+      border: none;
+      outline: none;
+      font-size: 16px;
+      color: #fff;
+      background: #029de6;
+      min-width: 175px;
+      padding: 15px;
+      cursor: pointer;
+    }
+  }
+  @media screen and (max-width:560px) {
+    &__section-header {
+      padding: 25px 15px;
+      padding-bottom: 40px;
+    }
+    &__sub-sec {
+      width: 95%;
+    left: 2.5%;
+    }
+    &__form-section {
+      grid-template-columns: 1fr;
+      margin-top: 0;
+      width: 100%;
+    }
+    &__form-inner-sec {
+      width: 100%;
+    }
+  }
+  // @media screen and(min-width:1560px) and(max-width:2500px){
+  //  &__inner-container{
+  //   max-width: 1280px;
+  //   margin: 0 auto;
+  //   width: 100%;
+  //  }
+  // }
+}
+
+.oriental-rtl {
+  .custom-text-area .MuiInputAdornment-positionStart {
+    margin-right: 0;
+    margin-left: 8px;
+    right: 8px;
+  }
+  .Contact{
+    @media screen and (max-width:560px) {
+      // &__section-header {
+      //   padding: 25px 15px;
+      //   padding-bottom: 40px;
+      // }
+      &__sub-sec {
+        width: 95%;
+      right: 0.5%;
+      left: 0;
+      }
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  transition: background-color 5000s;
+  // -webkit-text-fill-color: #fff !important;
+}
+
+button{
+  outline: none !important;
+}

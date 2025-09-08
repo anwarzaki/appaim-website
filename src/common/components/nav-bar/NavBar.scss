@@ -1,0 +1,329 @@
+.NavBar {
+    &__left-side-bar-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #d8dadb;
+      background: #fff;
+      min-height: 95px;
+      img {
+        max-width: 150px;
+        height: 48px;
+      }
+    }
+    &__search-sec {
+      padding: 8px 0;
+      .form-group {
+        margin-bottom: 0;
+        .MuiFormControl-marginNormal {
+          margin: 0;
+        }
+        .MuiOutlinedInput-notchedOutline {
+          border: none;
+          border-bottom: 1px solid #ccc;
+        }
+      }
+      .MuiOutlinedInput-input {
+        padding: 12.5px 14px;
+      }
+      .MuiOutlinedInput-root {
+        border-radius: 0;
+      }
+    }
+    &__left-sidebar-sec {
+      .MuiListItem-root{
+        &.active{
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+      }
+      .MuiListItemText-root,
+      .MuiListSubheader-sticky {
+        color: #424242;
+      }
+      .MuiListItem-root {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .MuiListItem-button:hover {
+        // background-color: #fbc02d;
+        background-color: rgba(0, 0, 0, 0.05);
+        font-weight: bold;
+      }
+      .MuiCollapse-entered {
+        color: #78909c;
+        .MuiList-root {
+          // padding-left: 20px;
+        }
+      }
+      .level2 {
+        padding-left: 32px;
+      }
+      .level3 {
+        padding-left: 48px;
+      }
+      .level4 {
+        padding-left: 64px;
+      }
+    }
+    &__logo_sec {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px 16px 0;
+      min-width: 90px;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 1px;
+        background: #1565c0;
+        opacity: 0.3;
+        top: 0;
+        right: 20px;
+        bottom: 0;
+      }
+    }
+    &__main_header_inner_section {
+      .MuiAppBar-root {
+        background: #002f6c;
+        // padding: 0 !important;
+      }
+    }
+    &__right-align {
+      .MuiSvgIcon-root{
+        fill: #fff;
+      }
+      .LanguageDropdown {
+        margin: 0 20px;
+      }
+      .LanguageDropdown__language_sec {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: "";
+          width: 1px;
+          background: #1565c0;
+          opacity: 0.3;
+          top: -20px;
+          right: -8px;
+          bottom: -20px;
+        }
+      }
+    }
+    &__mob_right_section {
+      position: relative;
+      .mob_lang_sec {
+        position: absolute;
+        left: -30px;
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        img {
+          width: 40px;
+          height: 20px;
+        }
+      }
+    }
+    &__desktop-menu {
+      button {
+        color: #007bff;
+      }
+    }
+    &__menu-btn {
+      padding: 8px;
+      .MuiSvgIcon-root {
+        font-size: 2rem;
+      }
+    }
+    &__mobile-menu {
+      display: none;
+    }
+    &__list_menu-ul {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      li {
+        display: flex;
+        height: 100%;
+        position: relative;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+        &.active-menu {
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            // background: #fbc02d;
+            background-color: rgba(0, 0, 0, 0.05);
+            height: 5px;
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+          }
+        }
+      }
+    }
+    &__toolbar {
+      // background: #fff;
+      // background: #002f6c;
+      background: #673ab7;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+        0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    }
+    &__btn-sec {
+      button {
+        &.create-btn{
+          background: #5c6bc0;
+          color: #fff;
+        }
+        &.switch-btn{
+          color: #353535;
+          margin: 0 10px;
+        }
+      }
+    }
+    
+    @media screen and (max-width:560px) {
+     
+      &__desktop-menu {
+        display: none;
+      }
+      &__mobile-menu {
+        .hrms-logo {
+          display: none
+        }
+        display: block;
+        .MuiIconButton-colorInherit {
+          color: inherit;
+        }
+        .NavBar__toolbar {
+          .MuiSvgIcon-root {
+            font-size: 28px;
+            fill: #fff;
+          }
+        }
+      }
+      &__right-align .LanguageDropdown {
+        margin: 0;
+      }
+      &__mob_right_section {
+        .LanguageDropdown__language_sec {
+          &::after {
+            width: 0;
+          }
+        }
+      }
+    }
+    @media screen and(min-width:1560px) and(max-width:2500px) {
+      &__desktop-menu {
+        max-width: 1280px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      &__main_header_inner_section {
+        header {
+          background: none;
+          box-shadow: none;
+        }
+      }
+    }
+    &__right-align {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+    &__toolbar {
+      height: 70px;
+      .dropdown-icon {
+        padding: 2px;
+      }
+    }
+  }
+  .center-align {
+    flex: 1;
+  }
+  .nav-dropdowns {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 0 8px;
+    color: #e8eaf6;
+    cursor: pointer;
+  }
+  
+  .icons {
+    // color: #1565c0;
+    color: #78909c;
+  }
+  .hrms-logo {
+    height: 40px;
+  }
+  .flag-logo {
+    height: 14px;
+    padding: 0 10px;
+  }
+  .profile-pic-sec {
+    padding: 4px;
+  }
+  .profile-pic {
+    height: 32px;
+    width: 32px;
+  }
+  
+  .text {
+    color: rebeccapurple;
+    margin-top: 100px;
+  }
+  
+  .oriental-rtl {
+    .NavBar {
+      &__logo_sec {
+        padding: 16px 0 16px 20px;
+        &::after {
+          right: auto;
+          left: 20px;
+        }
+      }
+      &__right-align {
+        .LanguageDropdown__language_sec {
+          &::after {
+            left: -8px;
+            right: auto;
+          }
+        }
+      }
+      &__mob_right_section .mob_lang_sec {
+        right: -30px;
+      }
+      &__right-align {
+        margin-right: auto;
+        margin-left: initial;
+      }
+    }
+  }
+  .custom-ar-lbl {
+    font-family: "Droid Arabic Kufi";
+  }
+  
+  :lang(ar) {
+    .NavBar__left-sidebar-sec {
+      direction: rtl;
+      .MuiListItem-root {
+        text-align: right;
+      }
+      .level2 {
+        padding-right: 32px;
+        padding-left: 16px;
+      }
+      .level3 {
+        padding-right: 48px;
+        padding-left: 16px;
+      }
+      .level4 {
+        padding-right: 64px;
+        padding-left: 16px;
+      }
+    }
+  }
+  
