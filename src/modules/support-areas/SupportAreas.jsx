@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./SupportAreas.scss";
 import "swiper/swiper.scss";
 import Swiper from "react-id-swiper";
@@ -161,7 +161,6 @@ const SupportAreas = (props) => {
             subImageUrl: homeSubImageOne,
             title: "Access Controls",
             desc: "This is an integral section of a well-constructed IoT sector. The security measured in this section has the ability to monitor diverse range of access points. Access points can be set to allow occupants by scanning fingerprints, password on a keypad, and facial scanning. This system is automated to verify a match and helps to check the credentials of anyone trying to gain entry.",
-            
           },
         },
         {
@@ -285,7 +284,6 @@ const SupportAreas = (props) => {
             desc: "Consumer foot traffic can be monitored and analyzed within the malls to enable better consumer experience. Integrated IoT connected system allows retailer to collect data of people coming in and exiting the store. This system gives room for better customer experience and lot more.",
           },
         },
-        
       ],
     },
     {
@@ -301,7 +299,7 @@ const SupportAreas = (props) => {
             desc: "Fleet administration is perhaps the most outstanding IoT solution for logistics. Utilizing GPS or satellite trackers to collect vehicle telematics, companies can improve driver’s subordination, increase the precision of delivery schedules, and ensure safety of both drivers and cargo. Fleet supervision solutions may also emphasize fuel usage monitoring and driver attitude monitoring. ",
           },
         },
-       ],
+      ],
     },
     {
       id: 6,
@@ -322,7 +320,7 @@ const SupportAreas = (props) => {
   const handleImageClick = (event, id, index) => {
     let selectedObj = imagesData.find((obj) => obj.id === id);
     setSelectedImageData(selectedObj);
-    console.log("index num", index)
+    console.log("index num", index);
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideTo(index, 0);
     }
@@ -345,7 +343,8 @@ const SupportAreas = (props) => {
       </div>
       <div className="SupportAreas__swiper-section">
         <div className="SupportAreas__swiper-list">
-          <Swiper ref={swiperRef}
+          <Swiper
+            ref={swiperRef}
             {...params}
             // shouldSwiperUpdate
             // rebuildOnUpdate={true}
@@ -409,7 +408,7 @@ const SupportAreas = (props) => {
                 );
               })}
           </div>
-          <div className="SupportAreas__sub-information-holder">
+          {/* <div className="SupportAreas__sub-information-holder">
             {selectedImageData?.data.length > 0 &&
               selectedImageData?.data.map((obj, index) => {
                 if (index === selectedDataIndex)
@@ -432,7 +431,7 @@ const SupportAreas = (props) => {
                     </div>
                   );
               })}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
