@@ -1,4 +1,5 @@
 @import "../../assets/styles/variable.scss";
+
 .Home {
   &__main-container {
     // height: calc(100vh - 72px);
@@ -313,10 +314,6 @@
       right: auto;
       left: 125px;
       transform: rotate(180deg);
-      &::before{
-        // right: auto;
-        // left: -10px;
-      }
     }
   }
  }

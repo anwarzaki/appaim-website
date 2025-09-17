@@ -104,12 +104,11 @@ const Contact = (props) => {
                   <div className="form-group-col">
                     <CustomInput
                       name="userName"
-                      label={t("User Name")}
-                      type="text"
                       id="userName"
-                      disabled={false}
-                      errors={errors}
+                      label="Full Name"
                       control={control}
+                      errors={errors}
+                      disabled={false}
                       required
                       rules={{
                         required: "user name required",
@@ -129,12 +128,11 @@ const Contact = (props) => {
                   <div className="form-group-col">
                     <CustomInput
                       name="email"
-                      label={t("Email")}
-                      type="email"
                       id="email"
-                      disabled={false}
-                      errors={errors}
+                      label="Email"
                       control={control}
+                      errors={errors}
+                      disabled={false}
                       required
                       rules={{
                         required: "email required",

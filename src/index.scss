@@ -1,7 +1,6 @@
 @import "./assets/styles/variable.scss";
+
 .App {
-  &__main-container {
-  }
   &__mobile-header-menu {
     display: none;
   }
@@ -219,6 +218,3 @@
   }
 }
 
-.footer-section {
-  // min-height: 250px;
-}

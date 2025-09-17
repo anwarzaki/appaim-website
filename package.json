@@ -11,32 +11,27 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "aos": "^2.3.4",
-    "axios": "^0.19.2",
+    "axios": "^1.12.2",
     "classnames": "^2.2.6",
-    "gh-pages": "^2.1.1",
+    "gh-pages": "^6.3.0",
     "google-maps-react": "^2.0.6",
     "i18next": "^19.8.3",
     "react": "^17.0.2",
     "react-countup": "^4.3.3",
     "react-dom": "^17.0.2",
     "react-geocode": "^0.2.3",
-    "react-hook-form": "^6.15.8",
+    "react-hook-form": "^7.62.0",
     "react-i18next": "^11.12.0",
     "react-id-swiper": "^4.0.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "swiper": "5.4.5",
+    "swiper": "^12.0.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-  "start": "react-scripts --openssl-legacy-provider start",
-  "build": "react-scripts --openssl-legacy-provider build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
-  "vercel-build": "npm install --legacy-peer-deps && npm run build"
-} ,
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -53,6 +48,8 @@
     ]
   },
   "devDependencies": {
-    "sass": "^1.92.1"
+    "@vitejs/plugin-react": "^4.2.1",
+    "sass": "^1.69.5",
+    "vite": "^4.5.0"
   }
 }

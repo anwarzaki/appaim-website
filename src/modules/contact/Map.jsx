@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Map, InfoWindow, GoogleApiWrapper, Marker } from "google-maps-react";
 import Geocode from "react-geocode";
-Geocode.setApiKey(process.env.REACT_APP_GOOGLE_API_KEY);
+Geocode.setApiKey(import.meta.env.VITE_GOOGLE_API_KEY);
 //Geocode.setApiKey("AIzaSyAohKs5PYLzX5iweNRYOfm_ka6yCunzngo");
 Geocode.enableDebug();
 
@@ -66,9 +66,9 @@ const MapContainer = ({
 };
 
 export default GoogleApiWrapper({
- apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
-// apiKey.("AIzaSyCb22Xq4XjQtUAwZrOxL-hKJCWCmNwz3wc");
+  apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
+  // apiKey.("AIzaSyCb22Xq4XjQtUAwZrOxL-hKJCWCmNwz3wc");
 
- //Geocode.setApiKey("AIzaSyAohKs5PYLzX5iweNRYOfm_ka6yCunzngo");
+  //Geocode.setApiKey("AIzaSyAohKs5PYLzX5iweNRYOfm_ka6yCunzngo");
   libraries: ["geometry"],
 })(MapContainer);

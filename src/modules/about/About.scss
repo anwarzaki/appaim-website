@@ -1,4 +1,5 @@
 @import "../../assets/styles/variable.scss";
+
 .About {
   &__main-container {
     padding: 20px 0;
@@ -82,6 +83,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
+    line-clamp: 5;
     overflow: hidden;
   }
   &__company-info-description {

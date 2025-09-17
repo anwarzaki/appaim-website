@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 import "./assets/styles/common.scss";
+import "./i18n";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
@@ -20,7 +21,9 @@ import SupportAreas from "./modules/support-areas/SupportAreas";
 import Contact from "./modules/contact/Contact";
 import englishIcon from "./assets/images/english-icon.svg";
 import arabicIcon from "./assets/images/arabic.svg";
-const getDimensions = ele => {
+// import { createRoot } from "react-dom/client";
+
+const getDimensions = (ele) => {
   const { height } = ele.getBoundingClientRect();
   const offsetTop = ele.offsetTop;
   const offsetBottom = offsetTop + height;
@@ -28,17 +31,17 @@ const getDimensions = ele => {
   return {
     height,
     offsetTop,
-    offsetBottom
+    offsetBottom,
   };
 };
 
 const useStyles = makeStyles({
   list: {
-    width: 275
+    width: 275,
   },
   fullList: {
-    width: "auto"
-  }
+    width: "auto",
+  },
 });
 
 const App = () => {
@@ -50,12 +53,12 @@ const App = () => {
     top: false,
     left: false,
     bottom: false,
-    right: false
+    right: false,
   });
   const [isLangChange, setLangChange] = useState(true);
   const toggleLanguage = () => setLangChange(!isLangChange);
 
-  const toggleDrawer = (anchor, open) => event => {
+  const toggleDrawer = (anchor, open) => (event) => {
     // console.log("calleds");
 
     if (
@@ -69,11 +72,11 @@ const App = () => {
     setState({ ...state, [anchor]: open });
   };
 
-  const scrollTo = ele => {
+  const scrollTo = (ele) => {
     // console.log("scroll", ele);
     ele.scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
   };
 
@@ -87,7 +90,7 @@ const App = () => {
     { section: "Home", ref: homeRef },
     { section: "About", ref: aboutRef },
     { section: "SupportAreas", ref: supportAreasRef },
-    { section: "Contact", ref: contactRef }
+    { section: "Contact", ref: contactRef },
   ];
 
   useEffect(() => {
@@ -116,7 +119,7 @@ const App = () => {
     };
   }, [visibleSection]);
 
-  const ViewSection = type => {
+  const ViewSection = (type) => {
     // console.log(type);
 
     if (type == "web") {
@@ -131,7 +134,13 @@ const App = () => {
   useEffect(() => {}, [showMobileDevelopment, showWebDevelopment]);
 
   return (
-    <div className={isLangChange?"App__main-container en" :"App__main-container oriental-rtl"} >
+    <div
+      className={
+        isLangChange
+          ? "App__main-container en"
+          : "App__main-container oriental-rtl"
+      }
+    >
       <div className="App__main-content-section">
         <div className="App__sticky">
           <div className="App__desktop-header-menu" ref={headerRef}>
@@ -212,13 +221,11 @@ const App = () => {
           <div className="App__mobile-header-menu">
             <div className="App__mobile-header-menu-list">
               <div className="App__mobile-header-menu-left-sec">
-                {["left"].map(anchor => (
+                {["left"].map((anchor) => (
                   <React.Fragment key={anchor}>
-                    <Button onClick={toggleDrawer(anchor, true)}>
-                      <IconButton>
-                        <MenuIcon />
-                      </IconButton>
-                    </Button>
+                    <IconButton onClick={toggleDrawer(anchor, true)}>
+                      <MenuIcon />
+                    </IconButton>
                     <SwipeableDrawer
                       anchor={anchor}
                       open={state[anchor]}
@@ -234,7 +241,7 @@ const App = () => {
                           // onClick={() => {
                           //   scrollTo(homeRef.current);
                           // }}
-                          onClick={e => {
+                          onClick={(e) => {
                             scrollTo(homeRef.current);
                             toggleDrawer(anchor, false)(e);
                           }}
@@ -246,7 +253,7 @@ const App = () => {
                           className={`header_link ${
                             visibleSection === "About" ? "selected" : ""
                           }`}
-                          onClick={e => {
+                          onClick={(e) => {
                             scrollTo(aboutRef.current);
 
                             toggleDrawer(anchor, false)(e);
@@ -259,7 +266,7 @@ const App = () => {
                           className={`header_link ${
                             visibleSection === "SupportAreas" ? "selected" : ""
                           }`}
-                          onClick={e => {
+                          onClick={(e) => {
                             toggleDrawer(anchor, false)(e);
                             scrollTo(supportAreasRef.current);
                           }}
@@ -271,7 +278,7 @@ const App = () => {
                           className={`header_link ${
                             visibleSection === "Contact" ? "selected" : ""
                           }`}
-                          onClick={e => {
+                          onClick={(e) => {
                             toggleDrawer(anchor, false)(e);
                             scrollTo(contactRef.current);
                           }}
@@ -293,7 +300,7 @@ const App = () => {
         </div>
 
         <div className="App__home-container" id="Home" ref={homeRef}>
-          <Home  />
+          <Home />
         </div>
         <div className="App__about-container" id="About" ref={aboutRef}>
           <About />
@@ -305,17 +312,25 @@ const App = () => {
         >
           <SupportAreas />
         </div>
-        
-        
+
         <div className="App__contact-container" id="Contact" ref={contactRef}>
           <Contact />
         </div>
         <div className="footer-section">
-          <Footer scrollTo={scrollTo} refs={{homeRef:homeRef,aboutRef:aboutRef,supportAreasRef:supportAreasRef,contactRef:contactRef}} />
+          <Footer
+            scrollTo={scrollTo}
+            refs={{
+              homeRef: homeRef,
+              aboutRef: aboutRef,
+              supportAreasRef: supportAreasRef,
+              contactRef: contactRef,
+            }}
+          />
         </div>
       </div>
     </div>
   );
 };
+
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);

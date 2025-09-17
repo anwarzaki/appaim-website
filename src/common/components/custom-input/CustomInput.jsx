@@ -15,8 +15,7 @@ import TextField from '@material-ui/core/TextField';
  * @param {string} props.label Label of the input
  */
 
-const CustomInput = ({ errors, id, name, isArray, onInput, ...rest }) => {
-  const { control } = useForm();
+const CustomInput = ({ errors = {}, id, name, isArray, onInput, control, ...rest }) => {
   const inputRef = React.useRef();
   const [section, key] = !isArray ? name.split('.') : ['', ''];
 
@@ -50,27 +49,22 @@ const CustomInput = ({ errors, id, name, isArray, onInput, ...rest }) => {
     <>
       <div className="form-group custom-input-container">
         <Controller
-          as={<TextField inputRef={inputRef} />}
-          variant="outlined"
-          id={id}
           name={name}
           control={control}
-          error={
-            !isArray
-              ? !key
-                ? name in errors
-                : section in errors && key in errors[section]
-              : fetchError()
-          }
-          margin="normal"
-          fullWidth
-          onInput={onInput}
-          onFocus={() => {
-            if (inputRef.current) {
-              inputRef.current.focus();
-            }
-          }}
-          {...rest}
+          render={({ field, fieldState: { error } }) => (
+            <TextField
+              {...field}
+              inputRef={inputRef}
+              variant="outlined"
+              id={id}
+              error={!!error}
+              helperText={error?.message}
+              margin="normal"
+              fullWidth
+              onInput={onInput}
+              {...rest}
+            />
+          )}
         />
         {!isArray &&
           (!key

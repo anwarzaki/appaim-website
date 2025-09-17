@@ -21,19 +21,20 @@ const CustomTextArea = ({
     <div className="CustomTextArea__main-container dynamic-text-area">
       <Controller
         name={name}
-        as={
+        control={control}
+        render={({ field, fieldState: { error } }) => (
           <TextareaAutosize
+            {...field}
             label={t(`${label}`)}
             aria-label={ariaLabel}
             rows={rows}
             placeholder={t(`${placeHolder}`)}
             maxLength={maxLength}
+            error={!!error}
+            className={className}
+            {...rest}
           />
-        }
-        control={control}
-        errors={errors}
-        className={className}
-        {...rest}
+        )}
       />
     </div>
   );

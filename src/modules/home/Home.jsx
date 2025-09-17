@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Home.scss";
-import "swiper/swiper.scss";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Swiper from "react-id-swiper";
 import homeAutomationImg from "../../assets/images/home-automation.png";
 import officeMgmtImg from "../../assets/images/office-mgmt.png";
@@ -105,7 +107,7 @@ const Home = (props) => {
     });
   }, []);
   return (
-    <div className="Home__main-container" useRef={props.homeRef}>
+    <div className="Home__main-container" ref={props.homeRef}>
       <div className="Home__inner-container-row">
         <div className="Home__inner-container-col left-sec">
           <div className="Home__banner-left-info-sec">

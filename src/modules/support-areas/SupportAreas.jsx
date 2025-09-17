@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./SupportAreas.scss";
-import "swiper/swiper.scss";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Swiper from "react-id-swiper";
 import homeAutomationImg from "../../assets/images/home-automation.png";
 import officeMgmtImg from "../../assets/images/office-mgmt.png";
